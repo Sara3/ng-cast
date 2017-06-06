@@ -18,14 +18,19 @@ angular.module('video-player')
 // })
 
 .component('app', {
-  // bindings: {
-  //   videos: '<'
-  // },
-  controller: function($scope) {
-    this.currentVideo = exampleVideoData[0];
+  controller: function($scope, youTube) {
     this.videos = exampleVideoData;
-    this.selectVideo = function() {};
-    this.searchResults = function() {};
+    this.currentVideo = this.videos[0];
+
+    this.selectVideo = function(newVideo) {
+      this.currentVideo = newVideo;
+    };
+
+    this.searchResults = function(callback, query) {
+      youTube.getData(callback, query);
+    };
+
+    
     
   },
 

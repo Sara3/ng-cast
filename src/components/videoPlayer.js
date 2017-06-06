@@ -2,12 +2,13 @@ angular.module('video-player')
 
 .component('videoPlayer', {
   bindings: {
-    video: '<',
-   
+    video: '=',
+    selectVideo: '='
   },
-  controller: function($scope) {
 
-    console.log('video player', $scope);
+  controller: function($scope) {
+    console.log('video player', this.video);
+    
   },
   
 
