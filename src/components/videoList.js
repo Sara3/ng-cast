@@ -1,10 +1,18 @@
 angular.module('video-player')
 .component('videoList', {
   bindings: {
-    videos: '<'
+    videos: '<',
+    video: '<'
+    
+   
   },
   controller: function($scope) {
-    console.log($scope.$ctrl.videos);
+    console.log($scope.$ctrl.video);
+    this.onClick = function(video) {
+      $scope.$ctrl.video = video;
+      console.log($scope.$ctrl.video);
+      
+    };
     
     // console.log("scope of vidList", $scope.$ctrl.videos[0]);
     // this.displayVideo = function() {

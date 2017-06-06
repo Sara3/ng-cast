@@ -4,7 +4,7 @@ angular.module('video-player')
     video: '<'
   },
   controller: function($scope) {
-    console.log($scope);
+    // console.log($scope);
 
   },
 
